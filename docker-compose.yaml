@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-video-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: video_db
+      POSTGRES_PASSWORD: 1020july
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
