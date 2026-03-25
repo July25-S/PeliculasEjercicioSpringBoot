@@ -1,16 +1,16 @@
 services:
   postgres:
-    image: postgres:latest
-    container_name: postgres-video-db
+    image: postgres:17.1-alpine
+    container_name: peliculas
     restart: unless-stopped
     environment:
-      POSTGRES_DB: video_db
+      POSTGRES_DB: peliculas
       POSTGRES_PASSWORD: 1020july
-      POSTGRES_USER: postgres
+      POSTGRES_USER: postgres-peliculas
     ports:
-      - "5432:5432"
+      - "55433:5432"
     volumes:
-      - pgdata:/var/lib/postgresql
+      - peliculas_pgdata:/var/lib/postgresql/data
 
 volumes:
-  pgdata:
+  peliculas_pgdata:
