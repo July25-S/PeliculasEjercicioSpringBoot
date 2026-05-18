@@ -5,12 +5,8 @@ import com.example.PeliculasEjercicioSpringBoot.domain.Genere;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record MovieDto(
-        Long id,
-        String titulo,
-        Genere genero,
-        int duracion,
-        LocalDate fechaEstreno,
-        BigDecimal clasificacion
-) {
+public record UpdateMovieDto(
+                             String titulo,
+                             Genere genero,
+                             LocalDate fechaEstreno) {
 }

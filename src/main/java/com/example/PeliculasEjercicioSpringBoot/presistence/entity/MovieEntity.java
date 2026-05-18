@@ -29,7 +29,7 @@ public class MovieEntity {
     private String genero;
 
     @Column(nullable = false)
-    private LocalDate fecha_estreno;
+    private LocalDate fechaEstreno;
 
     @Column(precision = 3, scale = 2)
     private BigDecimal clasificacion;

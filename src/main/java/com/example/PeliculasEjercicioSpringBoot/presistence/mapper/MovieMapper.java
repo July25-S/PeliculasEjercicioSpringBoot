@@ -2,11 +2,9 @@ package com.example.PeliculasEjercicioSpringBoot.presistence.mapper;
 
 
 import com.example.PeliculasEjercicioSpringBoot.domain.dto.MovieDto;
+import com.example.PeliculasEjercicioSpringBoot.domain.dto.UpdateMovieDto;
 import com.example.PeliculasEjercicioSpringBoot.presistence.entity.MovieEntity;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -22,6 +20,9 @@ public interface MovieMapper {
     @InheritInverseConfiguration
     @Mapping(target = "genero", source = "genero", qualifiedByName = "genereToString")
     MovieEntity toEntity(MovieDto dto);
+
+
+    void updateEntityFromDto(UpdateMovieDto dto, @MappingTarget MovieEntity entity);
 
 
 }
